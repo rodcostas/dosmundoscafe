@@ -1,5 +1,5 @@
 const CART_KEY = "dosmundos_cart_v1";
-let CONFIG = null;
+let CONFIG = { brandName:"Dos Mundos", tagline:"Coffee & Bitcoin", currency:"USD", payNote:"Pagos: efectivo o Bitcoin (Lightning).", whatsapp:"" };
 let PRODUCTS = [];
 
 const money = (n, cur="USD") =>
@@ -11,12 +11,10 @@ const setCart = (cart) => localStorage.setItem(CART_KEY, JSON.stringify(cart));
 function cartCount(){
   return getCart().reduce((sum,i)=>sum+i.qty,0);
 }
-
 function updateCartBadge(){
   const btn = document.getElementById("cartBtn");
   if(btn) btn.textContent = `Carrito (${cartCount()})`;
 }
-
 function addToCart(id){
   const cart = getCart();
   const item = cart.find(x=>x.id===id);
@@ -26,45 +24,69 @@ function addToCart(id){
   updateCartBadge();
 }
 
-function getSeriesFromURL(){
-  const params = new URLSearchParams(window.location.search);
-  const s = (params.get("series") || "").trim().toLowerCase();
-  if(s === "cherito" || s === "satoshi") return s;
-  return null;
+function showFatal(msg){
+  const grid = document.getElementById("grid");
+  if(grid){
+    grid.innerHTML = `<div class="panel"><strong>Error:</strong> <span class="muted">${msg}</span></div>`;
+  }
+}
+
+async function safeJson(url){
+  const r = await fetch(url, { cache: "no-store" });
+  if(!r.ok) throw new Error(`${url} → ${r.status}`);
+  return r.json();
 }
 
 async function loadData(){
-  const [cfg, prods] = await Promise.all([
-    fetch("./data/config.json").then(r=>r.json()),
-    fetch("./data/products.json").then(r=>r.json())
-  ]);
-  CONFIG = cfg;
-  PRODUCTS = prods;
+  // Config is optional
+  try{
+    const cfg = await safeJson("./data/config.json");
+    CONFIG = { ...CONFIG, ...cfg };
+  }catch(e){
+    console.warn("Config missing/invalid, using defaults:", e);
+  }
+
+  // Products are required
+  try{
+    PRODUCTS = await safeJson("./data/products.json");
+  }catch(e){
+    console.error("Products failed to load:", e);
+    showFatal("No se pudo cargar el catálogo (products.json). Revisa que exista en /data y que sea JSON válido.");
+    throw e;
+  }
+}
+
+function hydrateBrand(){
+  const bn = document.getElementById("brandName");
+  const tl = document.getElementById("tagline");
+  const note = document.getElementById("payNote");
+  const hero = document.getElementById("heroImg");
+
+  if(bn) bn.textContent = CONFIG.brandName || "Dos Mundos";
+  if(tl) tl.textContent = CONFIG.tagline || "";
+  if(note) note.textContent = CONFIG.payNote || "";
+  if(hero && CONFIG.heroImage){
+    hero.src = CONFIG.heroImage;
+  }
 }
 
 function renderGrid(){
   const grid = document.getElementById("grid");
-  const filter = document.getElementById("statusFilter");
-  if(!grid || !filter) return;
+  if(!grid) return;
 
   const filter = document.getElementById("statusFilter");
-  const series = getSeriesFromURL();
-
   const draw = () => {
     const v = filter?.value || "all";
+    const list = PRODUCTS.filter(p => v==="all" ? true : p.status===v);
 
-    let list = PRODUCTS.slice();
-
-    // Series filter (Choose your world)
-    if(series){
-      list = list.filter(p => (p.series || "").toLowerCase() === series);
+    if(!list.length){
+      grid.innerHTML = `<div class="panel"><span class="muted">No hay productos para este filtro.</span></div>`;
+      return;
     }
-
-    // Status filter
-    list = list.filter(p => v === "all" ? true : p.status === v);
 
     grid.innerHTML = list.map(p => {
       const img = (p.images && p.images[0]) ? p.images[0] : "";
+      const soldout = p.status === "soldout";
       return `
         <article class="card">
           <div class="thumb">${img ? `<img src="${img}" alt="${p.name}">` : ""}</div>
@@ -73,7 +95,9 @@ function renderGrid(){
             <div class="sub">${p.subtitle || ""}</div>
             <div class="meta">
               <strong>${money(p.price, p.currency || CONFIG.currency)}</strong>
-              <button class="btn primary" data-add="${p.id}">Agregar</button>
+              <button class="btn primary" data-add="${p.id}" ${soldout ? "disabled" : ""}>
+                ${soldout ? "Agotado" : "Agregar"}
+              </button>
             </div>
           </div>
         </article>
@@ -87,20 +111,6 @@ function renderGrid(){
 
   filter?.addEventListener("change", draw);
   draw();
-}
-
-function hydrateBrand(){
-  const bn = document.getElementById("brandName");
-  const tl = document.getElementById("tagline");
-  const note = document.getElementById("payNote");
-  const hero = document.getElementById("heroImg");
-
-  if(bn) bn.textContent = CONFIG.brandName || "Dos Mundos";
-  if(tl) tl.textContent = CONFIG.tagline || "";
-  if(note) note.textContent = CONFIG.payNote || "";
-  if(hero){
-  hero.src = CONFIG.heroImage || "";
-}
 }
 
 function renderCartPage(){
@@ -143,16 +153,20 @@ Pago: ${CONFIG.payNote || "Efectivo o Bitcoin"}
 Nombre:
 Dirección (si es envío):
 `;
-    const wa = CONFIG.whatsapp || "";
+    const wa = (CONFIG.whatsapp || "").replace(/[^\d]/g,"");
     const url = `https://wa.me/${wa}?text=${encodeURIComponent(msg)}`;
     window.open(url, "_blank", "noopener");
   });
 }
 
 (async function init(){
-  await loadData();
-  hydrateBrand();
-  updateCartBadge();
-  renderGrid();
-  renderCartPage();
+  try{
+    await loadData();
+    hydrateBrand();
+    updateCartBadge();
+    renderGrid();
+    renderCartPage();
+  }catch(e){
+    // already surfaced in UI for products
+  }
 })();
