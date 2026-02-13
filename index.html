@@ -19,7 +19,8 @@
       </div>
 
       <nav class="nav">
-        <a class="active" href="./index.html">Tienda</a>
+        <a class="active" href="./index.html">Home</a>
+        <a href="./shop.html">Tienda</a>
         <a href="#about">Café</a>
         <a class="btn" href="#contact">Contacto</a>
         <a class="btn primary" href="./cart.html" id="cartBtn">Carrito (0)</a>
@@ -39,20 +40,29 @@
       </div>
     </section>
 
+    <!-- Choose your world -->
     <section class="section">
-      <div class="section-title">
-        <h3>Café en grano</h3>
-        <div class="controls">
-          <label class="small muted" for="statusFilter">Filtrar</label>
-          <select id="statusFilter" class="input pillselect">
-            <option value="all">Todos</option>
-            <option value="available">Disponible</option>
-            <option value="soldout">Agotado</option>
-          </select>
-        </div>
+      <div class="section-title" style="margin-bottom:10px;">
+        <h3>Elige tu mundo</h3>
       </div>
 
-      <div id="grid" class="grid" aria-live="polite"></div>
+      <div class="split">
+        <div class="panel">
+          <h3 style="margin:0 0 8px;">Café</h3>
+          <p class="muted" style="margin:0 0 14px;">
+            Explora las series y ediciones especiales. Compra para llevar o para envío.
+          </p>
+          <a class="btn primary full" href="./shop.html">Entrar a la tienda</a>
+        </div>
+
+        <div class="panel">
+          <h3 style="margin:0 0 8px;">Bitcoin</h3>
+          <p class="muted" style="margin:0 0 14px;">
+            La forma preferida: Lightning. Rápido, simple y directo.
+          </p>
+          <a class="btn full" href="#about">Ver cómo funciona</a>
+        </div>
+      </div>
     </section>
 
     <section id="about" class="section split">
