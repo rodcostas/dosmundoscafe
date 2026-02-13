@@ -1,58 +1,46 @@
 [
   {
     "id": "halving-2024",
+    "series": "satoshi",
     "name": "Satoshi Specialty — Halving Edition 2024",
-    "subtitle": "Orange Bourbon · Pulped Black Honey · Las Veraneras",
+    "subtitle": "Edición limitada",
     "price": 16.50,
     "currency": "USD",
     "status": "available",
-    "images": ["assets/products/halving-edition.avif"],
-    "notes": [
-      "12 oz / 340g",
-      "Apaneca Ilamatepec",
-      "Agroecologic & Bio-Dynamic"
-    ]
+    "images": ["assets/halving-edition.avif"],
+    "notes": ["12 oz / 340 g"]
   },
   {
     "id": "satoshi-special",
+    "series": "satoshi",
     "name": "Satoshi Specialty Blend",
-    "subtitle": "San Pacho & Red Bourbon · Black Honey",
+    "subtitle": "Finca Las Veraneras · San Pacho & Red Bourbon",
     "price": 15.00,
     "currency": "USD",
-    "status": "available",
-    "images": ["assets/products/satoshi-special.avif"],
-    "notes": [
-      "12 oz / 340g",
-      "Las Veraneras",
-      "Apaneca Ilamatepec"
-    ]
+    "status": "soldout",
+    "images": ["assets/satoshi-special.avif"],
+    "notes": ["12 oz / 340 g"]
   },
   {
     "id": "mt-olympo",
-    "name": "Mt. Olympo Specialty Series",
-    "subtitle": "Pacamara Semi-Washed · Finca MileyDi–La Bonita",
+    "series": "cherito",
+    "name": "Mt. Olympo — Specialty Series",
+    "subtitle": "Finca Mileydi–La Bonita · Pacamara · Semi-Washed",
     "price": 15.00,
     "currency": "USD",
-    "status": "available",
-    "images": ["assets/products/mt-olympo.avif"],
-    "notes": [
-      "12 oz / 340g",
-      "Cup of Excellence",
-      "Alotepec · Metapán"
-    ]
+    "status": "soldout",
+    "images": ["assets/mt-olympo.avif"],
+    "notes": ["12 oz / 340 g"]
   },
   {
     "id": "la-palma",
+    "series": "cherito",
     "name": "La Palma & El Túnel",
-    "subtitle": "Pacas Semi-Washed",
+    "subtitle": "Pacas · Semi-Washed",
     "price": 12.50,
     "currency": "USD",
-    "status": "available",
-    "images": ["assets/products/la-palma.avif"],
-    "notes": [
-      "12 oz / 340g",
-      "Agroecologic & Bio-Dynamic",
-      "Alotepec · Metapán"
-    ]
+    "status": "soldout",
+    "images": ["assets/la-palma.avif"],
+    "notes": ["12 oz / 340 g"]
   }
 ]
