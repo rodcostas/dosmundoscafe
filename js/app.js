@@ -44,7 +44,8 @@ async function loadData(){
 
 function renderGrid(){
   const grid = document.getElementById("grid");
-  if(!grid) return;
+  const filter = document.getElementById("statusFilter");
+  if(!grid || !filter) return;
 
   const filter = document.getElementById("statusFilter");
   const series = getSeriesFromURL();
@@ -97,9 +98,9 @@ function hydrateBrand(){
   if(bn) bn.textContent = CONFIG.brandName || "Dos Mundos";
   if(tl) tl.textContent = CONFIG.tagline || "";
   if(note) note.textContent = CONFIG.payNote || "";
-  if(hero && CONFIG.heroImage){
-    hero.src = CONFIG.heroImage;
-  }
+  if(hero){
+  hero.src = CONFIG.heroImage || "";
+}
 }
 
 function renderCartPage(){
