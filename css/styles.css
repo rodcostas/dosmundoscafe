@@ -153,11 +153,10 @@ textarea:focus{
 
 .hero img{
   width:100%;
-  height:340px;
+  height:auto;
+  max-height:520px;
   object-fit:cover;
-  opacity:.92;
 }
-
 .hero-overlay{
   position:absolute;
   inset:0;
