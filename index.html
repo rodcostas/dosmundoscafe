@@ -1,1 +1,84 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dos Mundos • Coffee & Bitcoin</title>
+  <link rel="stylesheet" href="./css/styles.css" />
+</head>
 
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">
+        <div class="brandmark">∑</div>
+        <div>
+          <h1 id="brandName">Dos Mundos</h1>
+          <div class="small muted" id="tagline">Coffee & Bitcoin</div>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a class="active" href="./index.html">Tienda</a>
+        <a href="#about">Café</a>
+        <a class="btn" href="#contact">Contacto</a>
+        <a class="btn primary" href="./cart.html" id="cartBtn">Carrito (0)</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <img id="heroImg" alt="" />
+      <div class="hero-overlay">
+        <div class="hero-copy">
+          <h2>Dos Mundos: Coffee & Bitcoin.</h2>
+          <p>Specialty café roasters & co-lab en San Salvador. Misma artesanía, dos formas de pagar.</p>
+          <div class="hero-meta" id="payNote">Pagos: efectivo o Bitcoin (Lightning).</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title">
+        <h3>Café en grano</h3>
+        <div class="controls">
+          <label class="small muted" for="statusFilter">Filtrar</label>
+          <select id="statusFilter" class="input pillselect">
+            <option value="all">Todos</option>
+            <option value="available">Disponible</option>
+            <option value="soldout">Agotado</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="grid" class="grid" aria-live="polite"></div>
+    </section>
+
+    <section id="about" class="section split">
+      <div class="panel">
+        <h3>El café</h3>
+        <p class="muted">
+          Tueste artesanal, origen salvadoreño, y una obsesión por la calidad. Aquí se viene a probar, aprender y conversar.
+        </p>
+      </div>
+      <div class="panel">
+        <h3>Bitcoin</h3>
+        <p class="muted">
+          Para quienes viven en dos mundos: el físico y el digital. Si pagas con Lightning, mejor.
+        </p>
+      </div>
+    </section>
+
+    <footer id="contact" class="footer">
+      <div class="spread">
+        <div>© <span id="year"></span> <span class="muted">Dos Mundos</span></div>
+        <div class="muted">Diseño & desarrollo: Aurea Studio</div>
+      </div>
+    </footer>
+  </main>
+
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+  <script src="./js/app.js"></script>
+</body>
+</html>
