@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dos Mundos • Shop</title>
+  <link rel="stylesheet" href="./css/styles.css" />
+</head>
+
+<body data-page="shop">
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">
+        <img class="brandlogo" src="assets/logo.avif" alt="Dos Mundos" style="width:40px;height:40px;border-radius:12px;object-fit:cover;border:1px solid rgba(18,18,18,.10);" />
+        <div>
+          <h1 id="brandName">Dos Mundos</h1>
+          <div class="small muted" id="tagline">Coffee & Bitcoin</div>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a class="active" href="./shop.html">Shop</a>
+        <a href="./index.html">Tienda</a>
+        <a class="btn" href="./index.html#about">Café</a>
+        <a class="btn primary" href="./cart.html" id="cartBtn">Carrito (0)</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section">
+      <div class="section-title">
+        <div>
+          <h3>Elige tu mundo</h3>
+          <div class="small muted">Dos series. Misma obsesión por el café. Dos formas de pagar.</div>
+        </div>
+      </div>
+
+      <div class="grid" style="grid-template-columns:repeat(2,1fr)">
+        <article class="card">
+          <div class="thumb">
+            <img src="assets/mt-olympo.avif" alt="Cherito Series" />
+          </div>
+          <div class="body">
+            <h4 class="name">Cherito Series</h4>
+            <div class="sub">Origen · procesos · perfiles complejos</div>
+            <div class="meta">
+              <span class="badge"><span class="badge-dot"></span> Mundo: Café</span>
+              <a class="btn primary" href="./index.html?series=cherito">Entrar</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="thumb">
+            <img src="assets/halving-edition.avif" alt="Satoshi Series" />
+          </div>
+          <div class="body">
+            <h4 class="name">Satoshi Series</h4>
+            <div class="sub">Ediciones · blends · cultura Bitcoin</div>
+            <div class="meta">
+              <span class="badge"><span class="badge-dot"></span> Mundo: Bitcoin</span>
+              <a class="btn primary" href="./index.html?series=satoshi">Entrar</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="spread">
+        <div>© <span id="year"></span> <span class="muted">Dos Mundos</span></div>
+        <div class="muted">Diseño & desarrollo: Aurea Studio</div>
+      </div>
+    </footer>
+  </main>
+
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+  <script src="./js/app.js"></script>
+</body>
+</html>
