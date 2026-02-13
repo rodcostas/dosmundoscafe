@@ -26,6 +26,13 @@ function addToCart(id){
   updateCartBadge();
 }
 
+function getSeriesFromURL(){
+  const params = new URLSearchParams(window.location.search);
+  const s = (params.get("series") || "").trim().toLowerCase();
+  if(s === "cherito" || s === "satoshi") return s;
+  return null;
+}
+
 async function loadData(){
   const [cfg, prods] = await Promise.all([
     fetch("./data/config.json").then(r=>r.json()),
@@ -40,9 +47,20 @@ function renderGrid(){
   if(!grid) return;
 
   const filter = document.getElementById("statusFilter");
+  const series = getSeriesFromURL();
+
   const draw = () => {
     const v = filter?.value || "all";
-    const list = PRODUCTS.filter(p => v==="all" ? true : p.status===v);
+
+    let list = PRODUCTS.slice();
+
+    // Series filter (Choose your world)
+    if(series){
+      list = list.filter(p => (p.series || "").toLowerCase() === series);
+    }
+
+    // Status filter
+    list = list.filter(p => v === "all" ? true : p.status === v);
 
     grid.innerHTML = list.map(p => {
       const img = (p.images && p.images[0]) ? p.images[0] : "";
