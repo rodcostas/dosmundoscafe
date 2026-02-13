@@ -1,1 +1,32 @@
-
+[
+  {
+    "id": "halving-2024",
+    "name": "Satoshi Specialty — Halving Edition 2024",
+    "subtitle": "Edición limitada",
+    "price": 16.50,
+    "currency": "USD",
+    "status": "available",
+    "images": ["assets/products/halving.jpg"],
+    "notes": ["8 oz / 227g", "Produced in El Salvador"]
+  },
+  {
+    "id": "genesis-block",
+    "name": "Satoshi Genesis Block",
+    "subtitle": "Pacamara Natural",
+    "price": 16.50,
+    "currency": "USD",
+    "status": "available",
+    "images": ["assets/products/genesis.jpg"],
+    "notes": ["8 oz / 227g"]
+  },
+  {
+    "id": "black-honey",
+    "name": "Finca Las Veraneras — San Pacho Black Honey",
+    "subtitle": "Medium body",
+    "price": 12.50,
+    "currency": "USD",
+    "status": "available",
+    "images": ["assets/products/black-honey.jpg"],
+    "notes": ["12 oz / 340g"]
+  }
+]
