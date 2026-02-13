@@ -7,29 +7,62 @@
   --shadow:0 12px 36px rgba(22,21,19,.08);
   --radius:18px;
   --max:1100px;
-  --accent:#c2b280; /* sand */
+
+  /* Brand accent (sand) */
+  --accent:#c2b280;
 }
 
 *{box-sizing:border-box}
 html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
 a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
-button,input,select{font:inherit}
+button,input,select,textarea{font:inherit}
 
 .container{max-width:var(--max);margin:0 auto;padding:0 20px}
 .muted{color:var(--muted)}
 .small{font-size:13px}
 .section{padding:24px 0}
 
+/* =========================
+   Topbar
+========================= */
 .topbar{
   position:sticky;top:0;z-index:50;
   background:rgba(251,250,247,.88);
   backdrop-filter:blur(10px);
   border-bottom:1px solid var(--border);
 }
-.topbar-inner{height:64px;display:flex;align-items:center;justify-content:space-between;gap:14px}
-.brand{display:flex;gap:12px;align-items:center}
-.brand h1{margin:0;font-size:18px;letter-spacing:.4px}
+
+.topbar-inner{
+  height:64px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+}
+
+.brand{
+  display:flex;
+  gap:12px;
+  align-items:center;
+  min-width: 220px;
+}
+
+.brand h1{
+  margin:0;
+  font-size:18px;
+  letter-spacing:.4px;
+}
+
+.brandlogo{
+  width:40px;
+  height:40px;
+  border-radius:12px;
+  object-fit:cover;
+  border:1px solid var(--border);
+  background:rgba(255,255,255,.85);
+}
+
 .brandmark{
   width:38px;height:38px;border-radius:12px;
   display:grid;place-items:center;
@@ -37,66 +70,326 @@ button,input,select{font:inherit}
   background:rgba(255,255,255,.8);
   font-weight:700;
 }
-.nav{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
-.nav a{font-size:13px;color:var(--muted)}
-.nav a.active{color:var(--ink)}
+
+.nav{
+  display:flex;
+  gap:12px;
+  align-items:center;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+}
+
+.nav a{
+  font-size:13px;
+  color:var(--muted);
+}
+
+.nav a.active{
+  color:var(--ink);
+}
 
 .btn{
-  display:inline-flex;align-items:center;justify-content:center;
-  padding:10px 14px;border-radius:999px;border:1px solid var(--border);
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:10px 14px;
+  border-radius:999px;
+  border:1px solid var(--border);
   background:rgba(255,255,255,.9);
   cursor:pointer;
 }
-.btn.primary{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+
+.btn.primary{
+  background:var(--ink);
+  color:var(--bg);
+  border-color:var(--ink);
+}
+
 .btn.full{width:100%}
 
-.hero{
-  margin:22px 0 10px;border-radius:var(--radius);overflow:hidden;
-  border:1px solid var(--border);box-shadow:var(--shadow);
-  position:relative;background:linear-gradient(120deg, rgba(194,178,128,.18), rgba(22,21,19,.05));
+.btn:active{transform:translateY(1px)}
+
+.btn:focus,
+a:focus,
+select:focus,
+input:focus,
+textarea:focus{
+  outline:2px solid rgba(194,178,128,.45);
+  outline-offset:2px;
 }
-.hero img{width:100%;height:340px;object-fit:cover;opacity:.92}
+
+/* Mobile header behavior */
+@media (max-width: 720px){
+  .topbar-inner{
+    height:auto;
+    padding:12px 0;
+    align-items:flex-start;
+    flex-direction:column;
+  }
+  .brand{min-width:unset}
+  .nav{
+    width:100%;
+    justify-content:flex-start;
+    gap:10px;
+  }
+  .nav .btn{padding:10px 12px}
+}
+
+/* =========================
+   Hero
+========================= */
+.hero{
+  margin:22px 0 10px;
+  border-radius:var(--radius);
+  overflow:hidden;
+  border:1px solid var(--border);
+  box-shadow:var(--shadow);
+  position:relative;
+  background:linear-gradient(120deg, rgba(194,178,128,.18), rgba(22,21,19,.05));
+}
+
+.hero img{
+  width:100%;
+  height:340px;
+  object-fit:cover;
+  opacity:.92;
+}
+
 .hero-overlay{
-  position:absolute;inset:0;display:flex;align-items:flex-end;
-  padding:24px;background:linear-gradient(to top, rgba(22,21,19,.55), rgba(22,21,19,0));
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:flex-end;
+  padding:24px;
+  background:linear-gradient(to top, rgba(22,21,19,.55), rgba(22,21,19,0));
   color:var(--bg);
 }
+
 .hero-copy h2{margin:0 0 8px;font-size:34px}
 .hero-copy p{margin:0 0 12px;color:rgba(251,250,247,.88);max-width:60ch}
-.hero-meta{display:inline-block;padding:8px 12px;border-radius:999px;border:1px solid rgba(251,250,247,.22);background:rgba(0,0,0,.15);font-size:13px}
 
-.section-title{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;margin-bottom:16px}
-.section-title h3{margin:0;font-size:18px}
-.controls{display:flex;gap:10px;align-items:center}
-.pillselect{padding:8px 10px;border-radius:999px}
+.hero-meta{
+  display:inline-block;
+  padding:8px 12px;
+  border-radius:999px;
+  border:1px solid rgba(251,250,247,.22);
+  background:rgba(0,0,0,.15);
+  font-size:13px;
+}
 
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-@media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)} .hero img{height:280px}}
-@media(max-width:560px){.grid{grid-template-columns:1fr} .hero img{height:240px} .hero-copy h2{font-size:28px}}
+@media(max-width:900px){
+  .hero img{height:280px}
+}
+@media(max-width:560px){
+  .hero img{height:240px}
+  .hero-copy h2{font-size:28px}
+}
+
+/* =========================
+   Section title + controls
+========================= */
+.section-title{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:14px;
+  margin-bottom:16px;
+}
+
+.section-title h3{
+  margin:0;
+  font-size:18px;
+}
+
+.controls{
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
+
+.pillselect{
+  padding:8px 10px;
+  border-radius:999px;
+  border:1px solid var(--border);
+  background:rgba(255,255,255,.85);
+}
+
+/* =========================
+   Product Grid + Cards
+========================= */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+}
+
+@media(max-width:900px){
+  .grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:560px){
+  .grid{grid-template-columns:1fr}
+}
 
 .card{
-  background:var(--card);border:1px solid var(--border);
-  border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  overflow:hidden;
+  box-shadow:var(--shadow);
 }
-.thumb{height:220px;background:rgba(22,21,19,.06)}
-.thumb img{width:100%;height:100%;object-fit:cover}
-.body{padding:14px 14px 16px}
-.name{margin:0 0 6px;font-size:16px}
-.sub{margin:0 0 10px;color:var(--muted);font-size:13px}
-.meta{display:flex;justify-content:space-between;align-items:center;gap:10px}
 
-.split{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-@media(max-width:760px){.split{grid-template-columns:1fr}}
-.panel{background:rgba(255,255,255,.75);border:1px solid var(--border);border-radius:var(--radius);padding:16px;box-shadow:var(--shadow)}
+.thumb{
+  height:220px;
+  background:rgba(22,21,19,.06);
+}
 
-.footer{margin-top:28px;padding:28px 0;border-top:1px solid var(--border);font-size:13px;color:var(--muted)}
+.thumb img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
 
-.cart-shell{display:grid;grid-template-columns:1.4fr .6fr;gap:16px}
-@media(max-width:860px){.cart-shell{grid-template-columns:1fr}}
-.cart-list{display:grid;gap:10px;margin-top:10px}
+.body{
+  padding:14px 14px 16px;
+}
+
+.name{
+  margin:0 0 6px;
+  font-size:16px;
+}
+
+.sub{
+  margin:0 0 10px;
+  color:var(--muted);
+  font-size:13px;
+}
+
+.meta{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+}
+
+/* =========================
+   Badges / "Choose your world"
+========================= */
+.badge{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:6px 10px;
+  border-radius:999px;
+  border:1px solid var(--border);
+  background:rgba(255,255,255,.75);
+  font-size:12px;
+  color:var(--muted);
+}
+
+.badge-dot{
+  width:8px;
+  height:8px;
+  border-radius:999px;
+  background:var(--accent);
+}
+
+/* Optional: a darker dot for Bitcoin “world” */
+.badge.bitcoin .badge-dot{
+  background:var(--ink);
+}
+
+/* =========================
+   Split / Panels
+========================= */
+.split{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+}
+
+@media(max-width:760px){
+  .split{grid-template-columns:1fr}
+}
+
+.panel{
+  background:rgba(255,255,255,.75);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:16px;
+  box-shadow:var(--shadow);
+}
+
+/* =========================
+   Footer
+========================= */
+.footer{
+  margin-top:28px;
+  padding:28px 0;
+  border-top:1px solid var(--border);
+  font-size:13px;
+  color:var(--muted);
+}
+
+.spread{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:14px;
+  flex-wrap:wrap;
+}
+
+/* =========================
+   Cart page
+========================= */
+.cart-shell{
+  display:grid;
+  grid-template-columns:1.4fr .6fr;
+  gap:16px;
+}
+
+@media(max-width:860px){
+  .cart-shell{grid-template-columns:1fr}
+}
+
+.cart-list{
+  display:grid;
+  gap:10px;
+  margin-top:10px;
+}
+
 .cart-item{
-  display:flex;justify-content:space-between;gap:12px;
-  padding:12px;border:1px solid var(--border);border-radius:16px;background:rgba(255,255,255,.8);
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  padding:12px;
+  border:1px solid var(--border);
+  border-radius:16px;
+  background:rgba(255,255,255,.8);
 }
-.cart-summary{padding:16px;border:1px solid var(--border);border-radius:16px;background:rgba(255,255,255,.85);box-shadow:var(--shadow)}
-.summary-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+
+.cart-summary{
+  padding:16px;
+  border:1px solid var(--border);
+  border-radius:16px;
+  background:rgba(255,255,255,.85);
+  box-shadow:var(--shadow);
+}
+
+.summary-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:12px;
+}
+
+/* =========================
+   Shop page layout tweaks
+   (if you make shop.html)
+========================= */
+body[data-page="shop"] .grid{
+  grid-template-columns:repeat(2,1fr);
+}
+@media (max-width: 720px){
+  body[data-page="shop"] .grid{grid-template-columns:1fr}
+}
+body[data-page="shop"] .meta .btn{white-space:nowrap}
