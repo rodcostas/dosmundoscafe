@@ -70,16 +70,18 @@ button,input,select,textarea{font:inherit}
 }
 
 .brandmark img{
-  height:48px;
+  height:56px; /* was 48 */
   width:auto;
   object-fit:contain;
 }
 
+/* Main logo sizing */
 .logo-img{
-  height:42px;
+  height:56px; /* try 54–60 */
   width:auto;
   object-fit:contain;
 }
+
 .nav{
   display:flex;
   gap:12px;
@@ -93,11 +95,19 @@ button,input,select,textarea{font:inherit}
   color:var(--muted);
 }
 
+/* Nav active = subtle pill (NOT a big button) */
 .nav a.active{
-  background:var(--ink);
-  color:#fff;
-  padding:10px 16px;
+  background:rgba(22,21,19,.08);
+  color:var(--ink);
+  padding:8px 12px;
   border-radius:999px;
+}
+
+/* If .btn + .active ever get mixed, prevent double styling */
+.nav a.btn.active{
+  background:rgba(255,255,255,.9);
+  color:var(--ink);
+  border:1px solid var(--border);
 }
 
 .btn{
@@ -166,6 +176,7 @@ textarea:focus{
   max-height:520px;
   object-fit:cover;
 }
+
 .hero-overlay{
   position:absolute;
   inset:0;
@@ -226,6 +237,32 @@ textarea:focus{
 }
 
 /* =========================
+   Series submenu (Shop)
+========================= */
+.series-tabs{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:10px;
+}
+
+.tab{
+  appearance:none;
+  border:1px solid var(--border);
+  background:rgba(255,255,255,.85);
+  color:var(--muted);
+  padding:10px 14px;
+  border-radius:999px;
+  cursor:pointer;
+}
+
+.tab.active{
+  background:var(--ink);
+  color:var(--bg);
+  border-color:var(--ink);
+}
+
+/* =========================
    Product Grid + Cards
 ========================= */
 .grid{
@@ -246,6 +283,7 @@ textarea:focus{
   border:1px solid rgba(0,0,0,.06);
   border-radius:18px;
   box-shadow:0 8px 24px rgba(0,0,0,.04);
+  overflow:hidden;
 }
 
 .thumb{
@@ -254,11 +292,13 @@ textarea:focus{
   display:flex;
   align-items:center;
   justify-content:center;
+  padding:14px;
 }
 
 .thumb img{
   max-height:230px;
   width:auto;
+  max-width:100%;
   object-fit:contain;
 }
 
@@ -284,8 +324,16 @@ textarea:focus{
   gap:10px;
 }
 
+.meta .btn{white-space:nowrap}
+
+/* Disabled button state (sold out) */
+button:disabled{
+  opacity:.65;
+  cursor:not-allowed;
+}
+
 /* =========================
-   Badges / "Choose your world"
+   Badges / (optional)
 ========================= */
 .badge{
   display:inline-flex;
@@ -306,7 +354,6 @@ textarea:focus{
   background:var(--accent);
 }
 
-/* Optional: a darker dot for Bitcoin “world” */
 .badge.bitcoin .badge-dot{
   background:var(--ink);
 }
@@ -396,25 +443,14 @@ textarea:focus{
 }
 
 /* =========================
-   Shop page layout tweaks
-   (if you make shop.html)
+   Shop page layout tweaks (optional)
 ========================= */
 body[data-page="shop"] .grid{
-  grid-template-columns:repeat(2,1fr);
+  grid-template-columns:repeat(3,1fr);
 }
-@media (max-width: 720px){
+@media (max-width: 900px){
+  body[data-page="shop"] .grid{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width: 560px){
   body[data-page="shop"] .grid{grid-template-columns:1fr}
-}
-body[data-page="shop"] .meta .btn{white-space:nowrap}
-.thumb{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:14px;
-}
-.thumb img{
-  width:auto;
-  max-width:100%;
-  height:100%;
-  object-fit:contain;
 }
