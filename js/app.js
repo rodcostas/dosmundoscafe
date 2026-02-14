@@ -74,10 +74,25 @@ function renderGrid(){
   const grid = document.getElementById("grid");
   if(!grid) return;
 
-  const filter = document.getElementById("statusFilter");
+  const statusFilter = document.getElementById("statusFilter");
+
+  // Series submenu (shop.html)
+  const seriesBtns = Array.from(document.querySelectorAll("[data-series]"));
+  let activeSeries = "all";
+
+  const setActiveSeries = (series) => {
+    activeSeries = series;
+    seriesBtns.forEach(b => b.classList.toggle("active", b.dataset.series === series));
+  };
+
   const draw = () => {
-    const v = filter?.value || "all";
-    const list = PRODUCTS.filter(p => v==="all" ? true : p.status===v);
+    const status = statusFilter?.value || "all";
+
+    const list = PRODUCTS.filter(p => {
+      const okStatus = (status === "all") ? true : p.status === status;
+      const okSeries = (activeSeries === "all") ? true : (p.series === activeSeries);
+      return okStatus && okSeries;
+    });
 
     if(!list.length){
       grid.innerHTML = `<div class="panel"><span class="muted">No hay productos para este filtro.</span></div>`;
@@ -109,7 +124,19 @@ function renderGrid(){
     });
   };
 
-  filter?.addEventListener("change", draw);
+  // Hook up filters
+  statusFilter?.addEventListener("change", draw);
+
+  // Series buttons exist only on shop.html; safe on other pages
+  seriesBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      setActiveSeries(btn.dataset.series);
+      draw();
+    });
+  });
+
+  // Initial state
+  if(seriesBtns.length) setActiveSeries("all");
   draw();
 }
 
