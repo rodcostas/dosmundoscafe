@@ -12,20 +12,20 @@
     <div class="container topbar-inner">
       <div class="brand">
         <div class="brandmark logo-wrap">
-  <img src="./assets/logo.avif" alt="Dos Mundos Logo" class="logo-img">
-</div>
+          <img src="./assets/logo.avif" alt="Dos Mundos Logo" class="logo-img">
+        </div>
         <div>
           <h1 id="brandName">Dos Mundos</h1>
           <div class="small muted" id="tagline">Coffee & Bitcoin</div>
         </div>
       </div>
 
-     <nav class="nav">
-  <a class="active btn primary" href="./shop.html">Tienda</a>
-  <a href="./index.html#about">Café</a>
-  <a class="btn" href="./index.html#contact">Contacto</a>
-  <a class="btn" href="./cart.html" id="cartBtn">Carrito (0)</a>
-</nav>
+      <nav class="nav">
+        <a class="active btn primary" href="./shop.html">Tienda</a>
+        <a href="./index.html#about">Café</a>
+        <a class="btn" href="./index.html#contact">Contacto</a>
+        <a class="btn" href="./cart.html" id="cartBtn">Carrito (0)</a>
+      </nav>
     </div>
   </header>
 
@@ -41,6 +41,13 @@
             <option value="soldout">Agotado</option>
           </select>
         </div>
+      </div>
+
+      <!-- Series submenu -->
+      <div class="series-filter">
+        <button class="series-btn active" data-series="all">Todos</button>
+        <button class="series-btn" data-series="satoshi">Satoshi Series</button>
+        <button class="series-btn" data-series="cherito">Cherito Series</button>
       </div>
 
       <div id="grid" class="grid" aria-live="polite"></div>
