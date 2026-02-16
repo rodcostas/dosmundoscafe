@@ -143,7 +143,6 @@ textarea:focus{
     padding:12px 14px;
   }
 }
-
 /* =========================
    Hero
 ========================= */
@@ -158,9 +157,9 @@ textarea:focus{
 
 .hero img{
   width:100%;
-  height:auto;          /* let image define its own height */
-  max-height:none;      /* remove artificial cap */
-  object-fit:contain;   /* ensure full image is visible */
+  height:520px;               /* desktop hero height */
+  object-fit:cover;
+  object-position:50% 70%;    /* show a bit more “entrance”, less sky */
 }
 
 .hero-overlay{
@@ -184,16 +183,6 @@ textarea:focus{
   max-width:60ch;
 }
 
-.hero-meta{
-  margin-top:10px;
-  display:inline-block;
-  padding:8px 12px;
-  border-radius:999px;
-  border:1px solid rgba(251,250,247,.22);
-  background:rgba(0,0,0,.15);
-  font-size:13px;
-}
-
 .hero-cta{
   display:inline-block;
   margin-top:18px;
@@ -213,12 +202,12 @@ textarea:focus{
   border-color:rgba(255,255,255,.6);
 }
 
-@media(max-width:900px){
-  .hero img{max-height:380px}
+@media (max-width: 900px){
+  .hero img{height:380px}
 }
 
-@media(max-width:560px){
-  .hero img{max-height:260px}
+@media (max-width: 560px){
+  .hero img{height:260px}
   .hero-copy h2{font-size:28px}
 }
 
