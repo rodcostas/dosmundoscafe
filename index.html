@@ -9,63 +9,63 @@
 
 <body>
   <!-- TOPBAR -->
-<header class="topbar">
-  <div class="container topbar-inner">
+  <header class="topbar">
+    <div class="container topbar-inner">
 
-    <!-- Clickable Logo (always goes home) -->
-    <a class="brand" href="./index.html" aria-label="Dos Mundos">
-      <span class="brandmark">
-        <img src="./assets/logo.avif" alt="Dos Mundos" class="logo-img" />
-      </span>
-    </a>
+      <!-- Clickable Logo (always goes home) -->
+      <a class="brand" href="./index.html" aria-label="Dos Mundos">
+        <span class="brandmark">
+          <img src="./assets/logo.avif" alt="Dos Mundos" class="logo-img" />
+        </span>
+      </a>
 
-    <!-- Main Navigation -->
-    <nav class="nav">
-      <a href="./experiencia.html">La Experiencia</a>
-      <a class="btn primary" href="./shop.html">La Tienda</a>
-      <a href="./nosotros.html">Nosotros</a>
-      <a class="btn" href="./cart.html" id="cartBtn">El Carrito (0)</a>
-    </nav>
+      <!-- Main Navigation -->
+      <nav class="nav">
+        <a href="./experiencia.html">La Experiencia</a>
+        <a href="./shop.html">La Tienda</a>
+        <a href="./nosotros.html">Nosotros</a>
+        <a class="btn" href="./cart.html" id="cartBtn">El Carrito (0)</a>
+      </nav>
 
-  </div>
-</header>
+    </div>
+  </header>
 
   <!-- MAIN -->
   <main class="container">
-  <!-- Hero -->
-  <section class="hero">
-    <img id="heroImg" alt="Dos Mundos" />
-    <div class="hero-overlay">
-      <div class="hero-copy">
-        <h2>Dos Mundos</h2>
-        <p>Specialty Coffee Roasters &amp; Co-Lab</p>
-        <div class="hero-meta">
-          De origen salvadoreño. Conectado con el mundo.
+    <!-- Hero -->
+    <section class="hero">
+      <img id="heroImg" alt="Dos Mundos" />
+      <div class="hero-overlay">
+        <div class="hero-copy">
+          <h2>Dos Mundos</h2>
+          <p>Specialty Coffee Roasters &amp; Co-Lab</p>
+          <div class="hero-meta">De origen salvadoreño. Conectado con el mundo.</div>
+
+          <!-- Subtle experience CTA (doesn't compete with shop CTA below) -->
+          <div style="margin-top:16px;">
+            <a class="btn" href="./experiencia.html">Vive la experiencia</a>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Single Action Card -->
-  <section class="section">
-    <div class="panel" style="text-align:center;">
-      <h3 style="margin:0 0 10px;">Elige tu mundo</h3>
-      <p class="muted" style="margin:0 0 18px;">
-        Dos series, un mismo origen.
-      </p>
-      <a class="btn primary" href="./shop.html">
-        Conoce las series
-      </a>
-    </div>
-  </section>
+    <!-- Single Action Card -->
+    <section class="section">
+      <div class="panel" style="text-align:center;">
+        <h3 style="margin:0 0 10px;">Elige tu mundo</h3>
+        <p class="muted" style="margin:0 0 18px;">Dos series, un mismo origen.</p>
+        <a class="btn primary" href="./shop.html">Conoce las series</a>
+      </div>
+    </section>
 
-  <footer id="contact" class="footer">
-    <div class="spread">
-      <div>© <span id="year"></span> Dos Mundos</div>
-      <div class="muted">Diseño &amp; desarrollo: Aurea Studios</div>
-    </div>
-  </footer>
-</main>
+    <footer id="contact" class="footer">
+      <div class="spread">
+        <div>© <span id="year"></span> Dos Mundos</div>
+        <div class="muted">Diseño &amp; desarrollo: Aurea Studios</div>
+      </div>
+    </footer>
+  </main>
+
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
