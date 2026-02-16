@@ -3,27 +3,36 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Carrito • Dos Mundos</title>
+  <title>El Carrito • Dos Mundos</title>
   <link rel="stylesheet" href="./css/styles.css" />
 </head>
+
 <body>
+  <!-- TOPBAR -->
   <header class="topbar">
     <div class="container topbar-inner">
-      <div class="brand">
-        <div class="brandmark logo-wrap">
-  <img src="./assets/logo.avif" alt="Dos Mundos Logo" class="logo-img">
-</div>
-        <div>
-          <h1>Dos Mundos</h1>
-          <div class="small muted">Carrito</div>
-        </div>
-      </div>
+
+      <!-- Clickable Logo -->
+      <a class="brand" href="./index.html" aria-label="Dos Mundos">
+        <span class="brandmark">
+          <img src="./assets/logo.avif" alt="Dos Mundos" class="logo-img" />
+        </span>
+      </a>
+
+      <!-- Main Navigation -->
       <nav class="nav">
-        <a href="./index.html">Volver</a>
+        <a href="./experiencia.html">La Experiencia</a>
+        <a href="./shop.html">La Tienda</a>
+        <a href="./nosotros.html">Nosotros</a>
+        <a class="btn primary" href="./cart.html" id="cartBtn">
+          El Carrito (0)
+        </a>
       </nav>
+
     </div>
   </header>
 
+  <!-- MAIN -->
   <main class="container section">
     <div class="cart-shell">
       <div>
@@ -36,7 +45,11 @@
           <span class="muted">Total</span>
           <strong id="cartTotal">$0.00</strong>
         </div>
-        <button class="btn primary full" id="checkoutBtn">Pedir por WhatsApp</button>
+
+        <button class="btn primary full" id="checkoutBtn">
+          Pedir por WhatsApp
+        </button>
+
         <div class="small muted" style="margin-top:10px">
           Esto es una demo: el pago final se coordina por WhatsApp (efectivo o Bitcoin/Lightning).
         </div>
