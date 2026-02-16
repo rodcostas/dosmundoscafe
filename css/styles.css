@@ -158,9 +158,9 @@ textarea:focus{
 
 .hero img{
   width:100%;
-  height:auto;
-  max-height:520px;
-  object-fit:cover;
+  height:auto;          /* let image define its own height */
+  max-height:none;      /* remove artificial cap */
+  object-fit:contain;   /* ensure full image is visible */
 }
 
 .hero-overlay{
