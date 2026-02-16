@@ -164,13 +164,31 @@ textarea:focus{
   position:relative;
 }
 
+/* Desktop: show FULL image (no crop) */
 .hero img{
   width:100%;
-  height:520px;               /* desktop hero height */
-  object-fit:cover;
-  object-position:50% 70%;    /* show a bit more “entrance”, less sky */
+  height:auto;
+  max-height:720px;     /* optional safety cap */
+  object-fit:contain;   /* THIS prevents cropping */
+  background:#fff;      /* keeps edges clean if there’s letterboxing */
 }
 
+/* Optional: keep a tighter hero on smaller screens */
+@media (max-width: 900px){
+  .hero img{
+    height:380px;
+    object-fit:cover;
+    object-position:50% 70%;
+  }
+}
+
+@media (max-width: 560px){
+  .hero img{
+    height:260px;
+    object-fit:cover;
+    object-position:center;
+  }
+}
 .hero-overlay{
   position:absolute;
   inset:0;
