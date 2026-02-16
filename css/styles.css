@@ -63,11 +63,11 @@ button,input,select,textarea{font:inherit}
 
 .brandmark img,
 .logo-img{
-  height:96px;                  /* BIG logo */
-  width:auto;
-  object-fit:contain;
+  height:100px;   /* try 90–110px */
 }
-
+.topbar-inner{
+  height:120px;
+}
 .nav{
   display:flex;
   gap:12px;
