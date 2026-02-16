@@ -75,13 +75,22 @@ button,input,select,textarea{font:inherit}
   object-fit:contain;
 }
 
-/* Main logo sizing */
+/* Bigger logo in topbar */
 .logo-img{
-  height:56px; /* try 54–60 */
+  height:56px;      /* was ~42px */
   width:auto;
   object-fit:contain;
 }
 
+/* Give the header a bit more vertical room */
+.topbar-inner{
+  height:76px;      /* was 64px */
+}
+
+/* Optional: slightly larger brand name to match the logo */
+.brand h1{
+  font-size:19px;   /* was 18px */
+}
 .nav{
   display:flex;
   gap:12px;
