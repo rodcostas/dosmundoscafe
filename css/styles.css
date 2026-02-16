@@ -291,3 +291,72 @@ button:disabled{
   gap:14px;
   flex-wrap:wrap;
 }
+/* =========================
+   Mobile-first "clean header"
+   (Big logo like original)
+========================= */
+
+/* Desktop: slightly bigger than now, but still tidy */
+.logo-img{
+  height:72px; /* was 56 */
+  width:auto;
+  object-fit:contain;
+}
+
+.topbar-inner{
+  height:84px; /* give it breathing room */
+}
+
+/* Make brand area less constrained */
+.brand{
+  min-width: unset;
+}
+
+/* -------------------------
+   Mobile layout overhaul
+------------------------- */
+@media (max-width: 720px){
+
+  /* Header becomes centered stack */
+  .topbar-inner{
+    height:auto;
+    padding:14px 0 10px;
+    flex-direction:column;
+    align-items:center;
+    gap:10px;
+  }
+
+  /* Brand: center and stack */
+  .brand{
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    gap:10px;
+  }
+
+  /* Big logo like original */
+  .logo-img{
+    height:120px; /* go big */
+  }
+
+  /* Optional: hide brand text on mobile (cleaner, logo carries it) */
+  .brand h1,
+  #tagline{
+    display:none;
+  }
+
+  /* Nav becomes a clean row under the logo */
+  .nav{
+    width:100%;
+    justify-content:center;
+    gap:10px;
+    flex-wrap:wrap;
+  }
+
+  /* Make pills a bit larger / tappable */
+  .nav a,
+  .nav .btn{
+    font-size:14px;
+    padding:12px 14px;
+  }
+}
