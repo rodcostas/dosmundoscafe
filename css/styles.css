@@ -81,6 +81,15 @@ button,input,select,textarea{font:inherit}
   font-size:14px;
   color:var(--muted);
 }
+.nav a.active{
+  color:var(--ink);
+  font-weight:600;
+}
+
+.nav a.btn.active,
+.nav a.btn.primary.active{
+  box-shadow:0 10px 24px rgba(22,21,19,.12);
+}
 
 .btn{
   display:inline-flex;
