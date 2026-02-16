@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Dos Mundos • Specialty Café Roasters & Co-Lab  </title>
+  <title>Dos Mundos • Specialty Coffee Roasters & Co-Lab</title>
   <link rel="stylesheet" href="./css/styles.css" />
 </head>
 
@@ -12,71 +12,61 @@
     <div class="container topbar-inner">
       <div class="brand">
         <div class="brandmark logo-wrap">
-  <img src="./assets/logo.avif" alt="Dos Mundos Logo" class="logo-img">
-</div>
+          <img src="./assets/logo.avif" alt="Dos Mundos Logo" class="logo-img">
+        </div>
         <div>
           <h1 id="brandName">Dos Mundos</h1>
-          <div class="small muted" id="tagline">Coffee & Bitcoin</div>
+          <div class="small muted" id="tagline">Specialty Coffee Roasters & Co-Lab</div>
         </div>
       </div>
 
       <nav class="nav">
-  <a class="btn primary" href="./shop.html">Tienda</a>
-  <a href="#about">Café</a>
-  <a class="btn" href="#contact">Contacto</a>
-  <a class="btn" href="./cart.html" id="cartBtn">Carrito (0)</a>
-</nav>
+        <a class="btn primary" href="./shop.html">Tienda</a>
+        <a href="#about">Café</a>
+        <a class="btn" href="#contact">Contacto</a>
+        <a class="btn" href="./cart.html" id="cartBtn">Carrito (0)</a>
+      </nav>
     </div>
   </header>
 
   <main class="container">
+    <!-- 1) Hero (pure atmosphere, no button) -->
     <section class="hero">
-      <img id="heroImg" alt="" />
+      <!-- you will replace hero image yourself -->
+      <img id="heroImg" alt="Dos Mundos" />
       <div class="hero-overlay">
         <div class="hero-copy">
-          <h2>Dos Mundos: Coffee & Bitcoin.</h2>
-          <p>Specialty café roasters & co-lab en San Salvador. Misma artesanía, dos formas de pagar.</p>
-          <div class="hero-meta" id="payNote">Pagos: efectivo o Bitcoin (Lightning).</div>
+          <h2>Dos Mundos</h2>
+          <p>Specialty Coffee Roasters &amp; Co-Lab</p>
+          <div class="hero-meta">De origen salvadoreño. Conectado con el mundo.</div>
         </div>
       </div>
     </section>
 
-    <!-- Choose your world -->
+    <!-- 2) One clear action card -->
     <section class="section">
-      <div class="section-title" style="margin-bottom:10px;">
-        <h3>Elige tu mundo</h3>
-      </div>
-
-      <div class="split">
-        <div class="panel">
-          <h3 style="margin:0 0 8px;">Café</h3>
-          <p class="muted" style="margin:0 0 14px;">
-            Explora las series y ediciones especiales. Compra para llevar o para envío.
-          </p>
-          <a class="btn primary full" href="./shop.html">Entrar a la tienda</a>
-        </div>
-
-        <div class="panel">
-          <h3 style="margin:0 0 8px;">Bitcoin</h3>
-          <p class="muted" style="margin:0 0 14px;">
-            La forma preferida: Lightning. Rápido, simple y directo.
-          </p>
-          <a class="btn full" href="#about">Ver cómo funciona</a>
-        </div>
+      <div class="panel" style="text-align:center;">
+        <h3 style="margin:0 0 10px;">Elige tu mundo</h3>
+        <p class="muted" style="margin:0 0 16px;">Dos series, un mismo origen.</p>
+        <a class="btn primary" href="./shop.html">Conoce las series</a>
       </div>
     </section>
 
+    <!-- 3) Optional minimal philosophy -->
     <section id="about" class="section split">
       <div class="panel">
-        <h3>El café</h3>
-        <p class="muted">
-          Tueste artesanal, origen salvadoreño, y una obsesión por la calidad. Aquí se viene a probar, aprender y conversar.
+        <h3 style="margin:0 0 10px;">DOS MUNDOS</h3>
+        <p class="muted" style="margin:0;">
+          De origen salvadoreño.<br>
+          Conectado con el mundo.
         </p>
       </div>
+
       <div class="panel">
-        <h3>Bitcoin</h3>
-        <p class="muted">
-          Para quienes viven en dos mundos: el físico y el digital. Si pagas con Lightning, mejor.
+        <h3 style="margin:0 0 10px;">El café</h3>
+        <p class="muted" style="margin:0;">
+          Tueste artesanal, origen salvadoreño, y una obsesión por la calidad.
+          Aquí se viene a probar, aprender y conversar.
         </p>
       </div>
     </section>
@@ -84,12 +74,14 @@
     <footer id="contact" class="footer">
       <div class="spread">
         <div>© <span id="year"></span> <span class="muted">Dos Mundos</span></div>
-        <div class="muted">Diseño & desarrollo: Aurea Studios</div>
+        <div class="muted">Diseño &amp; desarrollo: Aurea Studios</div>
       </div>
     </footer>
   </main>
 
-  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
   <script src="./js/app.js"></script>
 </body>
 </html>
