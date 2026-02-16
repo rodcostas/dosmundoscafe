@@ -22,19 +22,19 @@ button,input,select,textarea{font:inherit}
 .section{padding:24px 0}
 
 /* =========================
-   Topbar (Logo-only)
+   Topbar (Logo-only, clean)
 ========================= */
 .topbar{
   position:sticky;
   top:0;
   z-index:50;
-  background:rgba(251,250,247,.92);
+  background:rgba(255,255,255,.92);
   backdrop-filter:blur(10px);
   border-bottom:1px solid var(--border);
 }
 
 .topbar-inner{
-  height:92px;                 /* desktop header height */
+  height:110px;                 /* desktop header height */
   display:flex;
   align-items:center;
   justify-content:space-between;
@@ -49,7 +49,7 @@ button,input,select,textarea{font:inherit}
   min-width:unset;
 }
 
-/* Hide brand text everywhere (clean, logo carries it) */
+/* Hide brand text everywhere (logo carries it) */
 .brand h1,
 #tagline{
   display:none;
@@ -61,13 +61,14 @@ button,input,select,textarea{font:inherit}
   justify-content:center;
 }
 
-/* Desktop logo size */
+/* BIG desktop logo */
 .logo-img{
-  height:76px;
+  height:110px;                 /* bold desktop */
   width:auto;
   object-fit:contain;
 }
 
+/* Nav */
 .nav{
   display:flex;
   gap:12px;
@@ -79,13 +80,6 @@ button,input,select,textarea{font:inherit}
 .nav a{
   font-size:14px;
   color:var(--muted);
-}
-
-.nav a.active{
-  background:rgba(22,21,19,.08);
-  color:var(--ink);
-  padding:8px 12px;
-  border-radius:999px;
 }
 
 .btn{
@@ -117,7 +111,7 @@ textarea:focus{
   outline-offset:2px;
 }
 
-/* Mobile: centered stack, big logo like original */
+/* Mobile: centered stack, very big logo like original */
 @media (max-width: 720px){
   .topbar-inner{
     height:auto;
@@ -134,7 +128,7 @@ textarea:focus{
   }
 
   .logo-img{
-    height:120px;              /* BIG mobile logo */
+    height:150px;               /* bold mobile */
   }
 
   .nav{
@@ -188,6 +182,16 @@ textarea:focus{
   margin:0;
   color:rgba(251,250,247,.88);
   max-width:60ch;
+}
+
+.hero-meta{
+  margin-top:10px;
+  display:inline-block;
+  padding:8px 12px;
+  border-radius:999px;
+  border:1px solid rgba(251,250,247,.22);
+  background:rgba(0,0,0,.15);
+  font-size:13px;
 }
 
 @media(max-width:900px){
