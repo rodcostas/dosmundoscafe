@@ -3,41 +3,39 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Tienda • Dos Mundos</title>
+  <title>La Tienda • Dos Mundos</title>
   <link rel="stylesheet" href="./css/styles.css" />
 </head>
 
 <body>
   <!-- TOPBAR -->
-<header class="topbar">
-  <div class="container topbar-inner">
+  <header class="topbar">
+    <div class="container topbar-inner">
 
-    <!-- Clickable Logo (always goes home) -->
-    <a class="brand" href="./index.html" aria-label="Dos Mundos">
-      <span class="brandmark">
-        <img src="./assets/logo.avif" alt="Dos Mundos" class="logo-img" />
-      </span>
-    </a>
+      <!-- Clickable Logo (always goes home) -->
+      <a class="brand" href="./index.html" aria-label="Dos Mundos">
+        <span class="brandmark">
+          <img src="./assets/logo.avif" alt="Dos Mundos" class="logo-img" />
+        </span>
+      </a>
 
-    <!-- Main Navigation -->
-    <nav class="nav">
-      <a href="./experiencia.html">La Experiencia</a>
-      <a class="btn primary active" href="./shop.html">La Tienda</a>
-      <a href="./nosotros.html">Nosotros</a>
-      <a class="btn" href="./cart.html" id="cartBtn">El Carrito (0)</a>
-    </nav>
+      <!-- Main Navigation -->
+      <nav class="nav">
+        <a href="./experiencia.html">La Experiencia</a>
+        <a class="btn primary" href="./shop.html">La Tienda</a>
+        <a href="./nosotros.html">Nosotros</a>
+        <a class="btn" href="./cart.html" id="cartBtn">El Carrito (0)</a>
+      </nav>
 
-  </div>
-</header>
+    </div>
+  </header>
+
   <main class="container">
     <section class="section">
+
       <div class="section-title">
         <h3>Elige tu mundo</h3>
-       <div class="series-tabs" role="tablist" aria-label="Series">
-  <button class="tab active" type="button" data-series="all">Todos</button>
-  <button class="tab" type="button" data-series="satoshi">Satoshi Series</button>
-  <button class="tab" type="button" data-series="cherito">Cherito Series</button>
-</div>
+
         <div class="controls">
           <label class="small muted" for="statusFilter">Filtrar</label>
           <select id="statusFilter" class="input pillselect">
@@ -48,11 +46,11 @@
         </div>
       </div>
 
-      <!-- Series submenu -->
-      <div class="series-filter">
-        <button class="series-btn active" data-series="all">Todos</button>
-        <button class="series-btn" data-series="satoshi">Satoshi Series</button>
-        <button class="series-btn" data-series="cherito">Cherito Series</button>
+      <!-- Series tabs (this is the ONLY series menu) -->
+      <div class="series-tabs" role="tablist" aria-label="Series">
+        <button class="tab active" type="button" data-series="all">Todos</button>
+        <button class="tab" type="button" data-series="satoshi">Satoshi Series</button>
+        <button class="tab" type="button" data-series="cherito">Cherito Series</button>
       </div>
 
       <div id="grid" class="grid" aria-live="polite"></div>
@@ -61,7 +59,7 @@
     <footer class="footer">
       <div class="spread">
         <div>© <span id="year"></span> <span class="muted">Dos Mundos</span></div>
-        <div class="muted">Diseño & desarrollo: Aurea Studios</div>
+        <div class="muted">Diseño &amp; desarrollo: Aurea Studios</div>
       </div>
     </footer>
   </main>
