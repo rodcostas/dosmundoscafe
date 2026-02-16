@@ -8,27 +8,28 @@
 </head>
 
 <body>
+  <!-- TOPBAR -->
   <header class="topbar">
-  <div class="container topbar-inner">
-    <div class="brand">
-      <div class="brandmark">
-        <img src="./assets/logo.avif" alt="Dos Mundos" class="logo-img" />
-      </div>
-    </div>
+    <div class="container topbar-inner">
+      <a class="brand" href="./index.html" aria-label="Dos Mundos">
+        <span class="brandmark">
+          <img src="./assets/logo.avif" alt="Dos Mundos" class="logo-img" />
+        </span>
+      </a>
 
-    <nav class="nav">
-      <a class="btn primary" href="./shop.html">Tienda</a>
-      <a href="#about">Café</a>
-      <a class="btn" href="#contact">Contacto</a>
-      <a class="btn" href="./cart.html" id="cartBtn">Carrito (0)</a>
-    </nav>
-  </div>
-</header>
-  
+      <nav class="nav" aria-label="Navegación principal">
+        <a class="btn primary" href="./shop.html">Tienda</a>
+        <a class="btn" href="#about">Café</a>
+        <a class="btn" href="#contact">Contacto</a>
+        <a class="btn" href="./cart.html" id="cartBtn">Carrito (0)</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN -->
   <main class="container">
-    <!-- 1) Hero (pure atmosphere, no button) -->
+    <!-- 1) Hero -->
     <section class="hero">
-      <!-- you will replace hero image yourself -->
       <img id="heroImg" alt="Dos Mundos" />
       <div class="hero-overlay">
         <div class="hero-copy">
