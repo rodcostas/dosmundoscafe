@@ -1,5 +1,5 @@
 const CART_KEY = "dosmundos_cart_v1";
-let CONFIG = { brandName:"Dos Mundos", tagline:"Coffee & Bitcoin", currency:"USD", payNote:"Pagos: efectivo o Bitcoin (Lightning).", whatsapp:"" };
+let CONFIG = { brandName:"Dos Mundos", tagline:"Specialty Coffee Roasters & Co-Lab", currency:"USD", payNote:"Pagos: efectivo o Bitcoin (Lightning).", whatsapp:"" };
 let PRODUCTS = [];
 
 const money = (n, cur="USD") =>
