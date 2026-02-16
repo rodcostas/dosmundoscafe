@@ -152,44 +152,67 @@ textarea:focus{
 }
 
 /* =========================
-   Hero (NO CROP on desktop)
-   - Shows full image
-   - No fixed height frame
+   Hero
 ========================= */
+
 .hero{
   margin:22px 0 10px;
   border-radius:var(--radius);
   overflow:hidden;
-  border:1px solid var(--border);
-  box-shadow:var(--shadow);
+
+  /* Softer, more premium depth */
+  box-shadow:0 16px 40px rgba(22,21,19,.06);
+
   position:relative;
+  height:520px;   /* desktop height */
 }
 
-/* Full image, no crop */
+@media (max-width:900px){
+  .hero{
+    height:380px;
+  }
+}
+
+@media (max-width:560px){
+  .hero{
+    height:260px;
+  }
+}
+
+/* Image fills the hero frame cleanly */
 .hero img{
   width:100%;
-  height:auto;
+  height:100%;
+  object-fit:cover;        /* immersive */
+  object-position:50% 70%; /* adjust framing if needed */
   display:block;
 }
 
-/* Overlay sits on top of the image */
+/* Overlay */
 .hero-overlay{
   position:absolute;
   inset:0;
   display:flex;
   align-items:flex-end;
   padding:28px;
-  background:linear-gradient(to top, rgba(22,21,19,.55), rgba(22,21,19,0));
+  background:linear-gradient(
+    to top,
+    rgba(22,21,19,.55),
+    rgba(22,21,19,0)
+  );
   color:var(--bg);
 }
 
+/* Copy */
 .hero-copy h2{
   margin:0 0 8px;
   font-size:36px;
 }
 
 @media (max-width:560px){
-  .hero-copy h2{font-size:28px}
+  .hero-copy h2{
+    font-size:28px;
+  }
 }
 
 .hero-copy p{
@@ -198,6 +221,7 @@ textarea:focus{
   max-width:60ch;
 }
 
+/* CTA */
 .hero-cta{
   display:inline-block;
   margin-top:18px;
@@ -216,7 +240,6 @@ textarea:focus{
   background:rgba(255,255,255,.18);
   border-color:rgba(255,255,255,.6);
 }
-
 /* =========================
    Panels / Cards
 ========================= */
