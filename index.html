@@ -28,54 +28,40 @@
 
   <!-- MAIN -->
   <main class="container">
-    <!-- 1) Hero -->
-    <section class="hero">
-      <img id="heroImg" alt="Dos Mundos" />
-      <div class="hero-overlay">
-        <div class="hero-copy">
-          <h2>Dos Mundos</h2>
-          <p>Specialty Coffee Roasters &amp; Co-Lab</p>
-          <div class="hero-meta">De origen salvadoreño. Conectado con el mundo.</div>
+  <!-- Hero -->
+  <section class="hero">
+    <img id="heroImg" alt="Dos Mundos" />
+    <div class="hero-overlay">
+      <div class="hero-copy">
+        <h2>Dos Mundos</h2>
+        <p>Specialty Coffee Roasters &amp; Co-Lab</p>
+        <div class="hero-meta">
+          De origen salvadoreño. Conectado con el mundo.
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- 2) One clear action card -->
-    <section class="section">
-      <div class="panel" style="text-align:center;">
-        <h3 style="margin:0 0 10px;">Elige tu mundo</h3>
-        <p class="muted" style="margin:0 0 16px;">Dos series, un mismo origen.</p>
-        <a class="btn primary" href="./shop.html">Conoce las series</a>
-      </div>
-    </section>
+  <!-- Single Action Card -->
+  <section class="section">
+    <div class="panel" style="text-align:center;">
+      <h3 style="margin:0 0 10px;">Elige tu mundo</h3>
+      <p class="muted" style="margin:0 0 18px;">
+        Dos series, un mismo origen.
+      </p>
+      <a class="btn primary" href="./shop.html">
+        Conoce las series
+      </a>
+    </div>
+  </section>
 
-    <!-- 3) Optional minimal philosophy -->
-    <section id="about" class="section split">
-      <div class="panel">
-        <h3 style="margin:0 0 10px;">DOS MUNDOS</h3>
-        <p class="muted" style="margin:0;">
-          De origen salvadoreño.<br>
-          Conectado con el mundo.
-        </p>
-      </div>
-
-      <div class="panel">
-        <h3 style="margin:0 0 10px;">El café</h3>
-        <p class="muted" style="margin:0;">
-          Tueste artesanal, origen salvadoreño, y una obsesión por la calidad.
-          Aquí se viene a probar, aprender y conversar.
-        </p>
-      </div>
-    </section>
-
-    <footer id="contact" class="footer">
-      <div class="spread">
-        <div>© <span id="year"></span> <span class="muted">Dos Mundos</span></div>
-        <div class="muted">Diseño &amp; desarrollo: Aurea Studios</div>
-      </div>
-    </footer>
-  </main>
-
+  <footer id="contact" class="footer">
+    <div class="spread">
+      <div>© <span id="year"></span> Dos Mundos</div>
+      <div class="muted">Diseño &amp; desarrollo: Aurea Studios</div>
+    </div>
+  </footer>
+</main>
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
