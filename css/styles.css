@@ -162,33 +162,22 @@ textarea:focus{
   border:1px solid var(--border);
   box-shadow:var(--shadow);
   position:relative;
+
+  /* consistent frame */
+  height:520px;
 }
 
-/* Desktop: show FULL image (no crop) */
+@media (max-width:900px){ .hero{height:380px} }
+@media (max-width:560px){ .hero{height:260px} }
+
 .hero img{
   width:100%;
-  height:auto;
-  max-height:720px;     /* optional safety cap */
-  object-fit:contain;   /* THIS prevents cropping */
-  background:#fff;      /* keeps edges clean if there’s letterboxing */
+  height:100%;
+  object-fit:cover;        /* no grey bars */
+  object-position:50% 70%; /* tweak framing */
+  display:block;
 }
 
-/* Optional: keep a tighter hero on smaller screens */
-@media (max-width: 900px){
-  .hero img{
-    height:380px;
-    object-fit:cover;
-    object-position:50% 70%;
-  }
-}
-
-@media (max-width: 560px){
-  .hero img{
-    height:260px;
-    object-fit:cover;
-    object-position:center;
-  }
-}
 .hero-overlay{
   position:absolute;
   inset:0;
@@ -202,6 +191,10 @@ textarea:focus{
 .hero-copy h2{
   margin:0 0 8px;
   font-size:36px;
+}
+
+@media (max-width:560px){
+  .hero-copy h2{font-size:28px}
 }
 
 .hero-copy p{
@@ -227,15 +220,6 @@ textarea:focus{
 .hero-cta:hover{
   background:rgba(255,255,255,.18);
   border-color:rgba(255,255,255,.6);
-}
-
-@media (max-width: 900px){
-  .hero img{height:380px}
-}
-
-@media (max-width: 560px){
-  .hero img{height:260px}
-  .hero-copy h2{font-size:28px}
 }
 
 /* =========================
