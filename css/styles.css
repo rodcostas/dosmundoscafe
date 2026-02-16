@@ -22,7 +22,7 @@ button,input,select,textarea{font:inherit}
 .section{padding:24px 0}
 
 /* =========================
-   Topbar
+   Topbar (Logo-only)
 ========================= */
 .topbar{
   position:sticky;
@@ -34,25 +34,25 @@ button,input,select,textarea{font:inherit}
 }
 
 .topbar-inner{
-  min-height:100px;              /* larger header */
-  padding:12px 0;
+  height:92px;                 /* desktop header height */
   display:flex;
   align-items:center;
   justify-content:space-between;
   gap:16px;
 }
 
+/* Brand area: logo only */
 .brand{
   display:flex;
-  gap:18px;
   align-items:center;
-  min-width:260px;
+  gap:0;
+  min-width:unset;
 }
 
-.brand h1{
-  margin:0;
-  font-size:20px;
-  letter-spacing:.4px;
+/* Hide brand text everywhere (clean, logo carries it) */
+.brand h1,
+#tagline{
+  display:none;
 }
 
 .brandmark{
@@ -61,13 +61,13 @@ button,input,select,textarea{font:inherit}
   justify-content:center;
 }
 
-.brandmark img,
+/* Desktop logo size */
 .logo-img{
-  height:100px;   /* try 90–110px */
+  height:76px;
+  width:auto;
+  object-fit:contain;
 }
-.topbar-inner{
-  height:120px;
-}
+
 .nav{
   display:flex;
   gap:12px;
@@ -117,22 +117,36 @@ textarea:focus{
   outline-offset:2px;
 }
 
-/* Mobile Header */
+/* Mobile: centered stack, big logo like original */
 @media (max-width: 720px){
   .topbar-inner{
-    min-height:auto;
-    padding:12px 0;
-    align-items:flex-start;
+    height:auto;
+    padding:14px 0 10px;
     flex-direction:column;
+    align-items:center;
+    gap:10px;
   }
 
-  .brand{min-width:unset}
-  .logo-img{height:72px;}        /* scaled mobile */
+  .brand{
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+  }
+
+  .logo-img{
+    height:120px;              /* BIG mobile logo */
+  }
 
   .nav{
     width:100%;
-    justify-content:flex-start;
+    justify-content:center;
     gap:10px;
+  }
+
+  .nav a,
+  .nav .btn{
+    font-size:14px;
+    padding:12px 14px;
   }
 }
 
@@ -290,73 +304,4 @@ button:disabled{
   align-items:center;
   gap:14px;
   flex-wrap:wrap;
-}
-/* =========================
-   Mobile-first "clean header"
-   (Big logo like original)
-========================= */
-
-/* Desktop: slightly bigger than now, but still tidy */
-.logo-img{
-  height:72px; /* was 56 */
-  width:auto;
-  object-fit:contain;
-}
-
-.topbar-inner{
-  height:84px; /* give it breathing room */
-}
-
-/* Make brand area less constrained */
-.brand{
-  min-width: unset;
-}
-
-/* -------------------------
-   Mobile layout overhaul
-------------------------- */
-@media (max-width: 720px){
-
-  /* Header becomes centered stack */
-  .topbar-inner{
-    height:auto;
-    padding:14px 0 10px;
-    flex-direction:column;
-    align-items:center;
-    gap:10px;
-  }
-
-  /* Brand: center and stack */
-  .brand{
-    flex-direction:column;
-    align-items:center;
-    text-align:center;
-    gap:10px;
-  }
-
-  /* Big logo like original */
-  .logo-img{
-    height:120px; /* go big */
-  }
-
-  /* Optional: hide brand text on mobile (cleaner, logo carries it) */
-  .brand h1,
-  #tagline{
-    display:none;
-  }
-
-  /* Nav becomes a clean row under the logo */
-  .nav{
-    width:100%;
-    justify-content:center;
-    gap:10px;
-    flex-wrap:wrap;
-  }
-
-  /* Make pills a bit larger / tappable */
-  .nav a,
-  .nav .btn{
-    font-size:14px;
-    padding:12px 14px;
-  }
 }
