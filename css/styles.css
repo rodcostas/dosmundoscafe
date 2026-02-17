@@ -285,6 +285,13 @@ textarea:focus{
   height:auto;
   object-fit:contain;
 }
+
+/* Cherito image has extra transparent padding → scale it up */
+.series-card[href*="cherito"] .series-media img{
+  transform: scale(1.35);
+  transform-origin: center;
+}
+
 /* --- TEXT AREA --- */
 .series-body{
   padding:18px 22px 22px;
