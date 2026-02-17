@@ -236,82 +236,83 @@ textarea:focus{
 }
 
 /* =========================
-   Shop: Choose your series (2 big images)
+   Shop – Series chooser (fixed sizing & centering)
 ========================= */
-.series-chooser{margin-top:8px}
 
 .series-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:16px;
+  gap:20px;
+  margin-top:10px;
 }
 
-@media (max-width: 760px){
-  .series-grid{grid-template-columns:1fr}
+@media (max-width:760px){
+  .series-grid{
+    grid-template-columns:1fr;
+  }
 }
 
 .series-card{
-  display:block;
-  background:rgba(255,255,255,.85);
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  background:#fff;
   border:1px solid var(--border);
   border-radius:var(--radius);
-  overflow:hidden;
   box-shadow:var(--shadow);
-  transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  overflow:hidden;
+  transition:transform .2s ease, box-shadow .2s ease;
 }
 
 .series-card:hover{
-  transform:translateY(-2px);
-  border-color:rgba(22,21,19,.18);
+  transform:translateY(-3px);
   box-shadow:0 22px 55px rgba(22,21,19,.10);
 }
 
-.series-thumb{
-  aspect-ratio: 16 / 10;
+/* --- IMAGE AREA --- */
+.series-media{
+  height:420px;            /* fixed visual height */
   display:flex;
   align-items:center;
   justify-content:center;
-  padding:18px;
-  background:linear-gradient(180deg, rgba(22,21,19,.02), rgba(22,21,19,.00));
+  padding:40px;
 }
 
-.series-thumb img{
+.series-media img{
   max-height:100%;
-  max-width:100%;
+  max-width:85%;
   width:auto;
+  height:auto;
   object-fit:contain;
 }
 
+/* --- TEXT AREA --- */
 .series-body{
-  padding:14px 16px 16px;
+  padding:18px 22px 22px;
   display:flex;
-  align-items:center;
   justify-content:space-between;
-  gap:12px;
+  align-items:flex-start;
+  gap:16px;
 }
 
-.series-title{
+.series-body h3{
+  margin:0 0 6px;
+  font-size:17px;
+}
+
+.series-body p{
   margin:0;
-  font-size:16px;
-  font-weight:650;
-}
-
-.series-sub{
-  margin:4px 0 0;
+  font-size:14px;
   color:var(--muted);
-  font-size:13px;
+  max-width:40ch;
 }
 
-.series-pill{
-  flex:0 0 auto;
-  padding:8px 12px;
-  border-radius:999px;
-  border:1px solid var(--border);
-  background:rgba(255,255,255,.95);
-  font-size:13px;
-  color:var(--ink);
+.series-cta{
+  flex-shrink:0;
+  font-size:14px;
+  font-weight:500;
+  white-space:nowrap;
 }
-
 /* =========================
    Product Grid
 ========================= */
