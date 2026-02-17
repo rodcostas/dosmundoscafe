@@ -148,54 +148,29 @@ textarea:focus{
 }
 
 /* =========================
-   Hero – pure image
+   Hero – Full width natural image
 ========================= */
 
-.hero{
-  margin:22px 0 10px;
-  border-radius:var(--radius);
-  overflow:hidden;
-  position:relative;
-  box-shadow:0 16px 40px rgba(22,21,19,.06);
+.hero {
+  width: 100%;
+  margin: 0;                /* remove spacing */
+  padding: 0;
+  position: relative;
 }
 
-/* Let the image define everything */
-.hero img{
-  width:100%;
-  height:auto;
-  display:block;
+.hero img {
+  width: 100%;
+  height: auto;             /* natural scaling */
+  display: block;
 }
 
-/* Remove gradient completely */
-.hero-overlay{
-  position:absolute;
-  inset:0;
-  display:flex;
-  align-items:flex-end;
-  padding:28px;
-  background:transparent;   /* no gradient */
-  color:#ffffff;
-}
-
-/* No background behind text */
-.hero-copy{
-  background:transparent;
-  padding:0;
-}
-
-.hero-copy h2{
-  margin:0 0 6px;
-  font-size:36px;
-}
-
-.hero-copy p{
-  margin:0;
-  font-size:16px;
-  opacity:.9;
-}
-
-@media (max-width:560px){
-  .hero-copy h2{font-size:28px}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  padding: 40px;
+  color: #fff;
 }
 /* =========================
    Panels / Cards
