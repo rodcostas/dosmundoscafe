@@ -412,3 +412,23 @@ button:disabled{
 .series-icon.btc{
   color:var(--accent);
 }
+
+.text-block{
+  max-width: 760px;
+  line-height: 1.65;
+}
+
+.text-block p{
+  margin-bottom: 18px;
+  font-size: 15px;
+}
+
+.values-list{
+  margin: 10px 0 0;
+  padding-left: 18px;
+  color: var(--muted);
+}
+
+.values-list li{
+  margin-bottom: 6px;
+}
