@@ -164,7 +164,7 @@ textarea:focus{
 
 .hero img{
   width:100%;
-  height:520px;              /* gives the “hero” feel on desktop */
+  height:520px;              /* hero feel on desktop */
   object-fit:cover;
   object-position:50% 70%;
 }
@@ -217,7 +217,6 @@ textarea:focus{
   background:rgba(0,0,0,.22);
   color:#fff;
   font-size:13px;
-  text-decoration:none;
   transition:all .25s ease;
 }
 .hero-cta:hover{
@@ -226,13 +225,20 @@ textarea:focus{
 }
 
 /* =========================
-   NEW: Shop “Choose your world” layout
-   Use this on shop.html for the two big images
+   Panels / Cards
 ========================= */
-
-.series-chooser{
-  margin-top:8px;
+.panel{
+  background:rgba(255,255,255,.85);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:18px;
+  box-shadow:var(--shadow);
 }
+
+/* =========================
+   Shop: Choose your series (2 big images)
+========================= */
+.series-chooser{margin-top:8px}
 
 .series-grid{
   display:grid;
@@ -261,7 +267,7 @@ textarea:focus{
 }
 
 .series-thumb{
-  aspect-ratio: 16 / 10;   /* consistent card height */
+  aspect-ratio: 16 / 10;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -304,27 +310,6 @@ textarea:focus{
   background:rgba(255,255,255,.95);
   font-size:13px;
   color:var(--ink);
-}
-
-/* =========================
-   Panels / Cards
-========================= */
-.split{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:16px;
-}
-
-@media(max-width:760px){
-  .split{grid-template-columns:1fr}
-}
-
-.panel{
-  background:rgba(255,255,255,.85);
-  border:1px solid var(--border);
-  border-radius:var(--radius);
-  padding:18px;
-  box-shadow:var(--shadow);
 }
 
 /* =========================
