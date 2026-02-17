@@ -30,33 +30,38 @@
 
   <main class="container">
     <section class="section">
-      <div class="section-title">
-        <h3>Elige tu mundo</h3>
-
-        <div class="series-tabs" role="tablist" aria-label="Series">
-          <button class="tab active" type="button" data-series="all">Todos</button>
-          <button class="tab" type="button" data-series="satoshi">Satoshi Series</button>
-          <button class="tab" type="button" data-series="cherito">Cherito Series</button>
-        </div>
-
-        <div class="controls">
-          <label class="small muted" for="statusFilter">Filtrar</label>
-          <select id="statusFilter" class="input pillselect">
-            <option value="all">Todos</option>
-            <option value="available">Disponible</option>
-            <option value="soldout">Agotado</option>
-          </select>
-        </div>
+      <div class="panel" style="text-align:center;">
+        <h2 style="margin:0 0 8px;">Elige tu serie</h2>
+        <p class="muted" style="margin:0;">Dos mundos. Un mismo origen.</p>
       </div>
+    </section>
 
-      <!-- (If you no longer need the duplicate series submenu, we can remove it next.) -->
-      <div class="series-filter">
-        <button class="series-btn active" data-series="all">Todos</button>
-        <button class="series-btn" data-series="satoshi">Satoshi Series</button>
-        <button class="series-btn" data-series="cherito">Cherito Series</button>
-      </div>
+    <section class="series-grid">
 
-      <div id="grid" class="grid" aria-live="polite"></div>
+      <!-- CHERITO (truck) -->
+      <a class="series-card" href="./cherito.html" aria-label="Entrar a la serie Cherito">
+        <div class="series-media">
+          <img src="./assets/series-cherito.png" alt="Cherito Series" loading="eager" />
+        </div>
+        <div class="series-body">
+          <h3>Cherito Series</h3>
+          <p class="muted">La ruta del sabor, versión Dos Mundos.</p>
+          <span class="series-cta">Ver Cherito →</span>
+        </div>
+      </a>
+
+      <!-- SATOSHI (mask) -->
+      <a class="series-card" href="./satoshi.html" aria-label="Entrar a la serie Satoshi">
+        <div class="series-media">
+          <img src="./assets/series-satoshi.png" alt="Satoshi Series" loading="eager" />
+        </div>
+        <div class="series-body">
+          <h3>Satoshi Series</h3>
+          <p class="muted">Orígenes, bloques y edición especial.</p>
+          <span class="series-cta">Ver Satoshi →</span>
+        </div>
+      </a>
+
     </section>
 
     <footer class="footer">
