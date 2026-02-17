@@ -31,40 +31,39 @@
   </header>
 
   <!-- MAIN -->
-<main class="container">
+  <main class="container">
 
-  <!-- HERO (inside container) -->
-  <section class="hero">
-    <img id="heroImg" alt="Dos Mundos" />
-    <div class="hero-overlay">
-      <div class="hero-copy">
-        <h2>Dos Mundos</h2>
-        <p>Specialty Coffee Roasters &amp; Co-Lab</p>
+    <!-- HERO -->
+    <section class="hero">
+      <img id="heroImg" alt="Dos Mundos" />
+      <div class="hero-overlay">
+        <div class="hero-copy">
+          <h2>Dos Mundos</h2>
+          <p>Specialty Coffee Roasters &amp; Co-Lab</p>
 
-        <!-- pill CTA -->
-        <a class="hero-cta" href="./experiencia.html">Vive la experiencia</a>
+          <!-- CTA only (no extra pill copy) -->
+          <a class="hero-cta" href="./experiencia.html">Vive la experiencia</a>
+        </div>
       </div>
-    </div>
-  </section>
-
-  <!-- everything else stays below (cards etc) -->
-  ...
-</main>
-  <!-- Everything below uses the normal container -->
-  <div class="container">
+    </section>
 
     <!-- Single Action Card -->
     <section class="section">
-      ...
+      <div class="panel" style="text-align:center;">
+        <h3 style="margin:0 0 10px;">Elige tu mundo</h3>
+        <p class="muted" style="margin:0 0 18px;">Dos series, un mismo origen.</p>
+        <a class="btn primary" href="./shop.html">Conoce las series</a>
+      </div>
     </section>
 
     <footer id="contact" class="footer">
-      ...
+      <div class="spread">
+        <div>© <span id="year"></span> Dos Mundos</div>
+        <div class="muted">Diseño &amp; desarrollo: Aurea Studios</div>
+      </div>
     </footer>
+  </main>
 
-  </div>
-</main>
-  
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
