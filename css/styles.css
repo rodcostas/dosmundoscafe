@@ -151,27 +151,32 @@ textarea:focus{
 }
 
 /* =========================
-   Hero – full width, no white frame
-   (hero must be OUTSIDE .container in HTML)
+   Hero (framed, like screenshot #1)
 ========================= */
 .hero{
-  width:100%;
-  margin:0;
-  padding:0;
-  position:relative;
-  overflow:hidden;
-  /* optional: if you want rounded corners + subtle shadow */
+  margin:22px 0 10px;
   border-radius:var(--radius);
+  overflow:hidden;
+  position:relative;
   box-shadow:var(--shadow);
+  background:#fff;               /* prevents any transparency weirdness */
 }
+
+/* Fixed hero window (prevents “out of control” image) */
+.hero{
+  height:520px;
+}
+@media (max-width:900px){ .hero{height:380px} }
+@media (max-width:560px){ .hero{height:260px} }
 
 .hero img{
   width:100%;
-  height:auto; /* natural scaling, no cropping */
+  height:100%;
+  object-fit:cover;              /* the “nice framed hero” look */
+  object-position:50% 70%;       /* tweak framing */
   display:block;
 }
 
-/* overlay holds the copy + CTA; no gradient */
 .hero-overlay{
   position:absolute;
   inset:0;
@@ -179,16 +184,6 @@ textarea:focus{
   align-items:flex-end;
   padding:28px;
   color:#fff;
-  pointer-events:none; /* so the image doesn't “block” clicks except on CTA */
-}
-
-@media (max-width:560px){
-  .hero-overlay{padding:18px}
-}
-
-/* text */
-.hero-copy{
-  pointer-events:auto;
 }
 
 .hero-copy h2{
@@ -206,10 +201,11 @@ textarea:focus{
 }
 
 @media (max-width:560px){
+  .hero-overlay{padding:18px}
   .hero-copy h2{font-size:28px}
 }
 
-/* CTA styled like the old “pill” */
+/* CTA pill (like your old “De origen…” pill) */
 .hero-cta{
   display:inline-block;
   margin-top:14px;
@@ -227,7 +223,6 @@ textarea:focus{
   background:rgba(0,0,0,.32);
   border-color:rgba(255,255,255,.45);
 }
-
 /* =========================
    Panels / Cards
 ========================= */
