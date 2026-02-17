@@ -8,8 +8,10 @@
 </head>
 
 <body>
+  <!-- TOPBAR -->
   <header class="topbar">
     <div class="container topbar-inner">
+
       <a class="brand" href="./index.html" aria-label="Dos Mundos">
         <span class="brandmark">
           <img src="./assets/logo.avif" alt="Dos Mundos" class="logo-img" />
@@ -20,16 +22,140 @@
         <a href="./shop.html">La Tienda</a>
         <a class="active" href="./experiencia.html">La Experiencia</a>
         <a href="./nosotros.html">Nosotros</a>
-        <a class="btn" href="./cart.html" id="cartBtn">El Carrito (0)</a>
+        <a class="btn" href="./cart.html" id="cartBtn">Carrito (0)</a>
       </nav>
+
     </div>
   </header>
 
-  <main class="container section">
-    <h2>La Experiencia</h2>
-    <p class="muted">Muy pronto.</p>
+  <main class="container">
+
+    <!-- HERO / INTRO PANEL -->
+    <section class="section">
+      <div class="panel" style="padding:22px 22px 20px;">
+        <h2 style="margin:0 0 6px;">La Experiencia</h2>
+        <p class="muted" style="margin:0 0 14px;">Ven por el café. Quédate por el proceso.</p>
+
+        <p class="muted" style="margin:0; max-width:78ch;">
+          En Dos Mundos, el café se vive con calma y detalle. Somos una tostadora boutique y un espacio co-lab
+          donde la calidad, la precisión y la exploración se sienten en cada taza.
+        </p>
+
+        <p class="muted" style="margin:12px 0 0; max-width:78ch;">
+          Si vienes a disfrutar, preparamos cada taza con precisión y calma.
+          Si vienes a conversar, encontrarás un espacio abierto a la exploración, la técnica y el intercambio de ideas.
+        </p>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE SECTIONS (editorial layout) -->
+    <section class="section" style="padding-top:6px;">
+
+      <!-- 1) ORIGEN / CHOOSING -->
+      <div class="panel" style="padding:18px;">
+        <div style="display:grid; grid-template-columns: 1.15fr .85fr; gap:18px; align-items:center;">
+          <div>
+            <h3 style="margin:0 0 6px;">Del grano a la taza</h3>
+            <p class="muted" style="margin:0; max-width:70ch;">
+              Todo comienza en el origen. Trabajamos con micro-productores de Ahuachapán y Chalatenango,
+              cuidando selección, trazabilidad y comercio justo. Cada lote se elige por su carácter: no buscamos
+              uniformidad; buscamos expresión.
+            </p>
+          </div>
+          <figure style="margin:0;">
+            <img src="./assets/choosing.png" alt="Selección de granos en Dos Mundos" style="border-radius:18px; box-shadow: var(--shadow); border:1px solid var(--border);" />
+          </figure>
+        </div>
+      </div>
+
+      <div style="height:14px;"></div>
+
+      <!-- 2) TOSTADO / ROASTING (flip layout) -->
+      <div class="panel" style="padding:18px;">
+        <div style="display:grid; grid-template-columns: .9fr 1.1fr; gap:18px; align-items:center;">
+          <figure style="margin:0;">
+            <img src="./assets/roasting.png" alt="Tostado en Dos Mundos" style="border-radius:18px; box-shadow: var(--shadow); border:1px solid var(--border);" />
+          </figure>
+          <div>
+            <h3 style="margin:0 0 6px;">Tostado con intención</h3>
+            <p class="muted" style="margin:0; max-width:70ch;">
+              Tostamos en lotes pequeños para cuidar cada detalle. Ajustamos curvas y tiempos para revelar lo mejor
+              del grano sin ocultar su identidad. Cada perfil es una decisión: aroma, dulzor, cuerpo y balance.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="height:14px;"></div>
+
+      <!-- 3) SAMPLES / LAB -->
+      <div class="panel" style="padding:18px;">
+        <div style="display:grid; grid-template-columns: 1.15fr .85fr; gap:18px; align-items:center;">
+          <div>
+            <h3 style="margin:0 0 6px;">Laboratorio y muestras</h3>
+            <p class="muted" style="margin:0; max-width:70ch;">
+              Probamos, comparamos y afinamos. Trabajamos con micro-lotes y muestras para perfeccionar perfiles
+              y explorar nuevas posibilidades. Aquí el café no es solo consumo: también es estudio.
+            </p>
+          </div>
+          <figure style="margin:0;">
+            <img src="./assets/samples.png" alt="Muestras de café en Dos Mundos" style="border-radius:18px; box-shadow: var(--shadow); border:1px solid var(--border);" />
+          </figure>
+        </div>
+      </div>
+
+      <div style="height:14px;"></div>
+
+      <!-- 4) TASTING / CUPPING + BEANS (2 images) -->
+      <div class="panel" style="padding:18px;">
+        <div style="display:grid; grid-template-columns: .95fr 1.05fr; gap:18px; align-items:center;">
+          <figure style="margin:0;">
+            <img src="./assets/tasting.png" alt="Cata en Dos Mundos" style="border-radius:18px; box-shadow: var(--shadow); border:1px solid var(--border);" />
+          </figure>
+
+          <div>
+            <h3 style="margin:0 0 6px;">Catas y conversación</h3>
+            <p class="muted" style="margin:0 0 12px; max-width:70ch;">
+              Realizamos sesiones de cata para entender aromas, cuerpo y acidez. Si te interesa la técnica,
+              la conversación y el intercambio, este es tu lugar.
+            </p>
+
+            <!-- beans image inside the tasting segment -->
+            <img src="./assets/beans.png" alt="Granos y muestras para cata" style="border-radius:18px; box-shadow: var(--shadow); border:1px solid var(--border);" />
+          </div>
+        </div>
+      </div>
+
+      <div style="height:14px;"></div>
+
+      <!-- 5) CAFÉ / SPACE -->
+      <div class="panel" style="padding:18px;">
+        <div style="display:grid; grid-template-columns: 1.15fr .85fr; gap:18px; align-items:center;">
+          <div>
+            <h3 style="margin:0 0 6px;">El espacio</h3>
+            <p class="muted" style="margin:0; max-width:70ch;">
+              Nuestro café en San Benito es un lugar de calma y detalle. Espresso, filtrados y métodos,
+              preparados con precisión por baristas profesionales. Si vienes a disfrutar, cada taza
+              se hace exactamente como la quieres.
+            </p>
+          </div>
+          <figure style="margin:0;">
+            <img src="./assets/cafeteria.png" alt="Cafetería Dos Mundos en San Benito" style="border-radius:18px; box-shadow: var(--shadow); border:1px solid var(--border);" />
+          </figure>
+        </div>
+      </div>
+
+    </section>
+
+    <footer class="footer">
+      <div class="spread">
+        <div>© <span id="year"></span> <span class="muted">Dos Mundos</span></div>
+        <div class="muted">Diseño &amp; desarrollo: Aurea Studios</div>
+      </div>
+    </footer>
   </main>
 
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
   <script src="./js/app.js"></script>
 </body>
 </html>
