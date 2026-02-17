@@ -403,3 +403,12 @@ button:disabled{
   gap:14px;
   flex-wrap:wrap;
 }
+
+.series-icon{
+  margin-right:6px;
+  opacity:.85;
+}
+
+.series-icon.btc{
+  color:var(--accent);
+}
