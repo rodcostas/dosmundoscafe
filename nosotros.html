@@ -1,47 +1,76 @@
-<main class="container">
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nosotros • Dos Mundos</title>
+  <link rel="stylesheet" href="./css/styles.css" />
+</head>
 
-  <section class="section">
-    <h1>Nosotros</h1>
-    <p class="muted">Dos mundos. Un mismo origen.</p>
-  </section>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="./index.html" aria-label="Dos Mundos">
+        <span class="brandmark">
+          <img src="./assets/logo.avif" alt="Dos Mundos" class="logo-img" />
+        </span>
+      </a>
 
-  <section class="section">
-    <div class="text-block">
-
-      <p>
-        Dos Mundos es una tostadora boutique y un espacio co-lab en San Salvador,
-        donde el café se trabaja con precisión, respeto y apertura.
-      </p>
-
-      <p>
-        Desde las tierras altas de Ahuachapán y Chalatenango, colaboramos con
-        microproductores bajo programas de Denominación de Origen, promoviendo
-        trazabilidad, agricultura sostenible y comercio justo.
-      </p>
-
-      <p>
-        Creemos en el puente: entre origen y ciudad, tradición e innovación,
-        productor y consumidor. Cada taza es una conversación entre esos mundos.
-      </p>
-
+      <nav class="nav">
+        <a href="./shop.html">La Tienda</a>
+        <a href="./experiencia.html">La Experiencia</a>
+        <a class="active" href="./nosotros.html">Nosotros</a>
+        <a class="btn" href="./cart.html" id="cartBtn">Carrito (0)</a>
+      </nav>
     </div>
-  </section>
+  </header>
 
-  <section class="section">
-    <h3>Valores</h3>
-    <ul class="values-list">
-      <li>Origen y trazabilidad</li>
-      <li>Calidad sin pretensión</li>
-      <li>Comunidad y colaboración</li>
-      <li>Diseño simple, intención clara</li>
-    </ul>
-  </section>
+  <main class="container">
+    <section class="section">
+      <div class="panel">
+        <h2 style="margin:0 0 8px;">Nosotros</h2>
+        <p class="muted" style="margin:0 0 18px;">Dos mundos. Un mismo origen.</p>
 
-  <footer class="footer">
-    <div class="spread">
-      <div>© <span id="year"></span> <span class="muted">Dos Mundos</span></div>
-      <div class="muted">Diseño & desarrollo: Aurea Studios</div>
-    </div>
-  </footer>
+        <p class="muted" style="margin:0 0 14px;">
+          Bienvenido a Dos Mundos Specialty Coffee Roasters &amp; Co-Lab.
+          Somos una tostadora boutique y un laboratorio colaborativo dedicado a crear experiencias de café de especialidad.
+          Aquí convergen el café y la creatividad — para quien busca un espresso bien hecho, y para productores que quieren
+          refinar procesos con precisión y cuidado.
+        </p>
 
-</main>
+        <p class="muted" style="margin:0 0 14px;">
+          Nuestro origen está en la historia y la innovación. Desde las montañas de Ahuachapán y Chalatenango,
+          trabajamos con granos seleccionados por micro-productores vinculados a la Denominación de Origen.
+          Creemos en honrar la herencia, cultivar lo justo y cuidar cada etapa: selección, tostado y preparación.
+        </p>
+
+        <p class="muted" style="margin:0;">
+          Estamos en El Salvador, inspirados por el mundo. Cada tueste es un puente entre origen y ciudad,
+          tradición y exploración. Cada taza cuenta una historia.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="panel">
+        <h3 style="margin:0 0 10px;">Información</h3>
+        <div class="muted small" style="line-height:1.7;">
+          <div><strong>Ubicación:</strong> San Benito, cerca del Museo de Arte de El Salvador (MARTE).</div>
+          <div><strong>Horario:</strong> (ponlo aquí)</div>
+          <div><strong>Contacto:</strong> WhatsApp (ponlo aquí)</div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="spread">
+        <div>© <span id="year"></span> <span class="muted">Dos Mundos</span></div>
+        <div class="muted">Diseño &amp; desarrollo: Aurea Studios</div>
+      </div>
+    </footer>
+  </main>
+
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+  <script src="./js/app.js"></script>
+</body>
+</html>
