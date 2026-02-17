@@ -1,80 +1,47 @@
-<!doctype html>
-<html lang="es">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>La Experiencia • Dos Mundos</title>
-  <link rel="stylesheet" href="./css/styles.css" />
-</head>
+<main class="container">
 
-<body>
-  <header class="topbar">
-    <div class="container topbar-inner">
-      <a class="brand" href="./index.html" aria-label="Dos Mundos">
-        <span class="brandmark">
-          <img src="./assets/logo.avif" alt="Dos Mundos" class="logo-img" />
-        </span>
-      </a>
+  <section class="section">
+    <h1>Nosotros</h1>
+    <p class="muted">Dos mundos. Un mismo origen.</p>
+  </section>
 
-      <nav class="nav">
-        <a href="./shop.html">La Tienda</a>
-        <a class="active" href="./experiencia.html">La Experiencia</a>
-        <a href="./nosotros.html">Nosotros</a>
-        <a class="btn" href="./cart.html" id="cartBtn">Carrito (0)</a>
-      </nav>
+  <section class="section">
+    <div class="text-block">
+
+      <p>
+        Dos Mundos es una tostadora boutique y un espacio co-lab en San Salvador,
+        donde el café se trabaja con precisión, respeto y apertura.
+      </p>
+
+      <p>
+        Desde las tierras altas de Ahuachapán y Chalatenango, colaboramos con
+        microproductores bajo programas de Denominación de Origen, promoviendo
+        trazabilidad, agricultura sostenible y comercio justo.
+      </p>
+
+      <p>
+        Creemos en el puente: entre origen y ciudad, tradición e innovación,
+        productor y consumidor. Cada taza es una conversación entre esos mundos.
+      </p>
+
     </div>
-  </header>
+  </section>
 
-  <main class="container">
-    <section class="section">
-      <div class="panel">
-        <h2 style="margin:0 0 8px;">La Experiencia</h2>
-        <p class="muted" style="margin:0 0 18px;">Ven por el café. Quédate por el ambiente.</p>
+  <section class="section">
+    <h3>Valores</h3>
+    <ul class="values-list">
+      <li>Origen y trazabilidad</li>
+      <li>Calidad sin pretensión</li>
+      <li>Comunidad y colaboración</li>
+      <li>Diseño simple, intención clara</li>
+    </ul>
+  </section>
 
-        <p class="muted" style="margin:0 0 14px;">
-          En Dos Mundos, el café se vive con calma y detalle. Somos una tostadora boutique y un espacio co-lab
-          donde la calidad, la precisión y la innovación se sienten en cada taza.
-        </p>
+  <footer class="footer">
+    <div class="spread">
+      <div>© <span id="year"></span> <span class="muted">Dos Mundos</span></div>
+      <div class="muted">Diseño & desarrollo: Aurea Studios</div>
+    </div>
+  </footer>
 
-        <p class="muted" style="margin:0;">
-          Si vienes a disfrutar, preparamos cada taza con precisión y calma.
-Si vienes a conversar, encontrarás un espacio abierto a la exploración, la técnica y el intercambio de ideas.
-        </p>
-
-        <div style="margin-top:16px;">
-  <a class="btn primary" href="#info">Ver info práctica</a>
-</div>
-      </div>
-    </section>
-
-    <section id="info" class="section">
-      <div class="panel">
-        <h3 style="margin:0 0 10px;">Info práctica</h3>
-
-        <div class="muted small" style="line-height:1.8;">
-          <div><strong>Dirección:</strong> (pon dirección exacta aquí)</div>
-          <div><strong>Zona:</strong> San Benito, cerca del Museo MARTE</div>
-          <div><strong>Horario:</strong> (pon horario aquí)</div>
-          <div><strong>Tel/WhatsApp:</strong> (pon número aquí)</div>
-          <div><strong>Pagos:</strong> Efectivo o Bitcoin (Lightning)</div>
-          <div><strong>Pedidos:</strong> Puedes comprar en “La Tienda” y coordinar por WhatsApp.</div>
-        </div>
-
-        <div style="margin-top:16px;">
-  <a class="btn primary" href="https://wa.me/" target="_blank" rel="noopener">WhatsApp</a>
-</div>
-      </div>
-    </section>
-
-    <footer class="footer">
-      <div class="spread">
-        <div>© <span id="year"></span> <span class="muted">Dos Mundos</span></div>
-        <div class="muted">Diseño &amp; desarrollo: Aurea Studios</div>
-      </div>
-    </footer>
-  </main>
-
-  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
-  <script src="./js/app.js"></script>
-</body>
-</html>
+</main>
